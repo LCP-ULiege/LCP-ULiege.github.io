@@ -371,6 +371,17 @@ window.addEventListener('DOMContentLoaded', () => {
       btn.classList.remove('active');
     }
   });
+
+    // Smooth scroll for navigation links
+  document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
 });
 </script>
 
